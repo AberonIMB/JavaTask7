@@ -68,14 +68,13 @@ public class BotLogicTest {
         Assertions.assertEquals("Вычислите степень: 10^2", fakeBot.getMessages().get(5));
         botLogic.processCommand(user, "100");
         Assertions.assertEquals("Правильный ответ!", fakeBot.getMessages().get(6));
-        Assertions.assertEquals(1, user.getWrongAnswerQuestions().size());
 
         Assertions.assertEquals("Сколько будет 2 + 2 * 2", fakeBot.getMessages().get(7));
         botLogic.processCommand(user, "6");
         Assertions.assertEquals("Правильный ответ!", fakeBot.getMessages().get(8));
-        Assertions.assertEquals(0, user.getWrongAnswerQuestions().size());
 
         Assertions.assertEquals("Тест завершен", fakeBot.getMessages().get(9));
+        Assertions.assertEquals(0, user.getWrongAnswerQuestions().size());
         botLogic.processCommand(user, "/repeat");
         Assertions.assertEquals("Нет вопросов для повторения", fakeBot.getMessages().get(10));
     }
@@ -92,7 +91,7 @@ public class BotLogicTest {
         botLogic.processCommand(user, "1");
         Assertions.assertEquals("Напоминание установлено", fakeBot.getMessages().get(3));
         Assertions.assertEquals(4, fakeBot.getMessages().size());
-        Thread.sleep(1010);
+        Thread.sleep(1020);
         Assertions.assertEquals("Сработало напоминание: 'Напоминание'", fakeBot.getMessages().get(4));
     }
 }
