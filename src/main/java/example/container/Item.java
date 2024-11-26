@@ -9,7 +9,7 @@ public class Item {
      */
     private final long num;
 
-    Item(long num) {
+    public Item(long num) {
         this.num = num;
     }
 
